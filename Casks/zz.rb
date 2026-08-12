@@ -4,7 +4,7 @@
 # tap, so edit the template rather than the published copy.
 cask "zz" do
   version "0.1.0"
-  sha256 "4e2c5ce44e45db8c2de8efb45f06b0267e8205a9f1bf0c99887be0b528fc43ea"
+  sha256 "e64bcf96c52b121ed6326728c080fb73b4ceb1c3faaaec9035b23283634f2f1f"
 
   url "https://github.com/demfabris/zz/releases/download/v#{version}/zz-#{version}-macos-arm64.dmg",
       verified: "github.com/demfabris/zz/"
