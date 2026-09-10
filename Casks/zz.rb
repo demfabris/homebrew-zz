@@ -5,8 +5,8 @@
 # template renders the `zz@beta` cask: the renderer retargets the token, the
 # conflict, and drops livecheck, which only knows the stable release.
 cask "zz" do
-  version "0.6.1"
-  sha256 "4fd085b3a2b9bde67c85b67bb149bd9211de084028fa50c50ba00224d6f0a2ea"
+  version "0.7.0"
+  sha256 "1597b8918e66b7bf361959295d944bb069118eda32e747696fbe88acfbf7f742"
 
   url "https://github.com/demfabris/zz/releases/download/v#{version}/zz-#{version}-macos-arm64.dmg",
       verified: "github.com/demfabris/zz/"
