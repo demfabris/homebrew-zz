@@ -5,8 +5,8 @@
 # template renders the `zz@beta` cask: the renderer retargets the token, the
 # conflict, and drops livecheck, which only knows the stable release.
 cask "zz@beta" do
-  version "0.10.0"
-  sha256 "fbdb53e81403084b69b1212e60a76f4e80cbd33f80bf3d147e53219c71749e42"
+  version "0.11.1"
+  sha256 "512df6b024cf47029c467985a12aa3b128127c494063d709d13208b593d02c44"
 
   url "https://github.com/demfabris/zz/releases/download/v#{version}/zz-#{version}-macos-arm64.dmg",
       verified: "github.com/demfabris/zz/"
@@ -20,10 +20,8 @@ cask "zz@beta" do
   depends_on macos: :big_sur
 
   app "zz.app"
-  # macOS resolves an app bundle from the path the executable was launched with
-  # and does not follow symlinks doing it, so a symlink to Contents/MacOS/zz
-  # would start zz with no Info.plist. `cli` is a launcher that canonicalizes
-  # itself and execs the real executable from inside the bundle.
+  # `cli` is the headless zz (CLI and daemon) that the app bundles.
+  # The `zz` symlink on PATH points to it; `zz app` opens the desktop app.
   binary "#{appdir}/zz.app/Contents/MacOS/cli", target: "zz"
 
   zap trash: [
