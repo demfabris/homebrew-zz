@@ -1,27 +1,18 @@
-# The casks published to github.com/demfabris/homebrew-zz. Their source lives
-# in packaging/homebrew/zz.rb in demfabris/zz; the release workflow fills in
-# the version and checksum with scripts/render-cask.sh and pushes the result to
-# the tap, so edit the template rather than the published copies. The same
-# template renders the `zz@beta` cask: the renderer retargets the token, the
-# conflict, and drops livecheck, which only knows the stable release.
 cask "zz@beta" do
-  version "0.22.0"
-  sha256 "0c14040ade702092101621b40ab6772f7f605fad42080ba2422feabbb6372e97"
+  version "0.23.0"
+  sha256 "95b536318f24fb5cf880ac051bcd4e3e34840527b9aebdc2e9b0395a8c9204cd"
 
-  url "https://github.com/demfabris/zz/releases/download/v#{version}/zz-#{version}-macos-arm64.dmg",
-      verified: "github.com/demfabris/zz/"
+  url "https://github.com/autistic-computer/zebrilus/releases/download/v#{version}/zz-#{version}-macos-arm64.dmg",
+      verified: "github.com/autistic-computer/zebrilus/"
   name "zz beta"
   desc "Terminal multiplexer with terminal, browser, and agent panes"
-  homepage "https://github.com/demfabris/zz"
+  homepage "https://github.com/autistic-computer/zebrilus"
 
   conflicts_with cask: "zz"
-  # The bundle carries a full Chromium; only the arm64 slice is released.
   depends_on arch: :arm64
   depends_on macos: :big_sur
 
   app "zz.app"
-  # `cli` is the headless zz (CLI and daemon) that the app bundles.
-  # The `zz` symlink on PATH points to it; `zz app` opens the desktop app.
   binary "#{appdir}/zz.app/Contents/MacOS/cli", target: "zz"
 
   zap trash: [
