@@ -1,6 +1,6 @@
 cask "zz@beta" do
-  version "0.29.0"
-  sha256 "48c37913e558a2d2d22b1fcc674f8047f9f55c11c6fd608adf5bf40867955add"
+  version "0.30.0"
+  sha256 "5a949c8855be756a1a3dd460bb2f8e34b264e2f28b4a3c3794d7ac5015f2b4ca"
 
   url "https://github.com/autistic-computer/zebrilus/releases/download/v#{version}/zz-#{version}-macos-arm64.dmg",
       verified: "github.com/autistic-computer/zebrilus/"
